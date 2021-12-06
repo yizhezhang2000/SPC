@@ -7,6 +7,7 @@ import skimage
 from skimage.io import imread
 import torchvision.models as models
 import cv2
+import pdb
 
 def SPC( pFeature_A , pFeature_B , seg_A , seg_B ): #Segmentation Perceptual Consistency:
   # pFeature_A : perceptual feature map for image A, shape =[c,w*h]
@@ -104,5 +105,10 @@ seg_B_c2=1-seg_B_c1
 seg_A=torch.cat((seg_A_c1,seg_A_c2),0)
 seg_B=torch.cat((seg_B_c1,seg_B_c2),0)
 
-pc_overall, pcA_map , pcB_map =SPC(pFeature_A , pFeature_B , seg_A , seg_B)
+pc_overall, pcA_map , pcB_map =SPC(pFeature_A.clone() , pFeature_B.clone() , seg_A.clone() , seg_B.clone())
+print (pc_overall)
+
+# sanity check #1: if one reverse the seg_B, the computed score would get much lower.
+seg_B=torch.cat((seg_B_c2, seg_B_c1),0)
+pc_overall, pcA_map , pcB_map =SPC(pFeature_A.clone() , pFeature_B.clone() , seg_A.clone() , seg_B.clone())
 print (pc_overall)
