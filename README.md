@@ -1,4 +1,4 @@
-# Segmentation Perceptual Consistency Core Function
+# Core Function of the Segmentation Perceptual Consistency 
 Perceptual Consistency in Video Segmentation (WACV 2022)
 https://arxiv.org/abs/2110.12385
 
