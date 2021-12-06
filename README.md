@@ -1,6 +1,7 @@
 # Core Function of the Segmentation Perceptual Consistency 
 Perceptual Consistency in Video Segmentation (WACV 2022)
-https://arxiv.org/abs/2110.12385
+
+Paper: https://arxiv.org/abs/2110.12385
 
 See example.py for the function and an example for running the function.
 
